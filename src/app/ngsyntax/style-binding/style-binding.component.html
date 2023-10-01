@@ -1,0 +1,14 @@
+<p>style-binding works!</p>
+<!-- Normal Style -->
+<h1 style="color:red">Heading 1</h1>  
+<!-- Style Binding  -->
+<h1 [style.color]="'blue'">Heading 1</h1>
+
+<!-- Dynamic Style Binding  -->
+<h1 [style.color]="color">Dynamic Style Binding</h1>
+
+<!-- Conditional Style Binding  -->
+<h1 [style.color]="err?'red':'green'">Conditional Style Binding</h1>
+
+<button (click)="onChangeColor()">Change Color </button>
+<button (click)="conditionalColor()">Change Conditional Color</button>

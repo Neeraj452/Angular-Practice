@@ -1,0 +1,13 @@
+/* Add styles for the error message container */
+.error-container {
+    margin-top: 5px;
+    color: red;
+    font-size: 14px;
+  }
+  
+  /* Style the error message text */
+  .error-message {
+    font-size: 12px;
+    font-style: italic;
+  }
+  

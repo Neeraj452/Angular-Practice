@@ -1,0 +1,36 @@
+<p>simple-form works!</p>
+
+<!-- Display form fields when not editing -->
+<div *ngIf="!isEditing">
+  <p>User Name: {{ userForm.get('user')?.value }}</p>
+  <p>User Age: {{ userForm.get('age')?.value }}</p>
+  <p>User Address: {{ userForm.get('address')?.value }}</p>
+  <button (click)="toggleEdit()">Edit</button>
+</div>
+
+<!-- Display form fields for editing when isEditing is true -->
+<form [formGroup]="userForm" (ngSubmit)="getValues()" *ngIf="isEditing">
+  <div>
+    <label for="user">User Name:</label>
+    <input type="text" formControlName="user" id="user" placeholder="Enter User Name" [(ngModel)]="userValues.user">
+    <div [ngClass]="{'error-container': hasError('user', 'required')}">
+        <span class="error-message" *ngIf="hasError('user', 'required')">User Name is required.</span>
+      </div>
+  </div>
+  <div>
+    <label for="age">User Age:</label>
+    <input type="number" formControlName="age" id="age" placeholder="Enter User Age" [(ngModel)]="userValues.age">
+    <div *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched" class="error-container">
+      <span class="error-message">Age is required and must be a positive number.</span>
+    </div>
+  </div>
+  <div>
+    <label for="address">User Address:</label>
+    <input type="text" formControlName="address" id="address" placeholder="Enter User Address" [(ngModel)]="userValues.address">
+    <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched" class="error-container">
+      <span class="error-message">User Address is required.</span>
+    </div>
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">Save</button>
+  <button type="button" (click)="toggleEdit()">Cancel</button>
+</form>
