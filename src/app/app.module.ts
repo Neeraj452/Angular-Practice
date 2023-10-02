@@ -20,6 +20,9 @@ import { PipeComponent } from './ngsyntax/pipe/pipe.component';
 import { AppRouterModule } from './app-router.module';
 import { AdminComponent } from './ngsyntax/routing/admin/admin.component';
 import { RauterUsersComponent } from './ngsyntax/routing/rauter-users/rauter-users.component';
+import { PageNotFoundComponent } from './ngsyntax/routing/page-not-found/page-not-found.component';
+import { CustomDirectiveDirective } from './ngsyntax/custom-directive.directive';
+import { UseServiceComponent } from './ngsyntax/service/use-service/use-service/use-service.component';
 
 
 
@@ -39,6 +42,9 @@ import { RauterUsersComponent } from './ngsyntax/routing/rauter-users/rauter-use
     PipeComponent,
     AdminComponent,
     RauterUsersComponent,
+    PageNotFoundComponent,
+    CustomDirectiveDirective,
+    UseServiceComponent,
   ],
   imports: [
     BrowserModule,
